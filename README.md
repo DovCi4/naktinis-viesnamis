@@ -28,13 +28,6 @@ Tada naršyklėje atidaryk:
 http://localhost:3000
 ```
 
-## Administratoriaus paskyra
-
-```text
-Vardas: admin
-Slaptažodis: admin123
-```
-
 Prisijungus kaip administratorius viršuje atsiras mygtukas:
 
 ```text
