@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naktinis Viešnamis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+  <div id="loader" class="loader">
+    <div class="loader-glow"></div>
+
+    <div class="loader-content">
+      <div id="loaderLogo" class="logo-placeholder large-logo">NV</div>
+      <h1>Naktinis Viešnamis</h1>
+      <p>Ruošiama naktinė atmosfera...</p>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <span id="progressText">0%</span>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="navbar">
+      <a href="#" class="brand">
+        <div id="headerLogo" class="logo-placeholder">NV</div>
+
+        <div>
+          <strong>Naktinis Viešnamis</strong>
+          <small>Bendruomenės forumas</small>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#" class="active">Pagrindinis</a>
+        <a href="#categories">Kategorijos</a>
+        <a href="#topics">Temos</a>
+      </nav>
+
+      <div id="guestActions" class="actions">
+        <button class="secondary" data-open="loginModal">Prisijungti</button>
+        <button class="primary" data-open="registerModal">Registruotis</button>
+      </div>
+
+      <div id="userActions" class="actions hidden">
+        <span id="welcomeUser" class="welcome"></span>
+        <button id="adminButton" class="secondary hidden" data-open="logoModal">
+          Keisti GIF logotipą
+        </button>
+        <button id="logoutButton" class="secondary">Atsijungti</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">🌙 AKTYVIAUSIA VIETA PO VIDURNAKČIO</span>
+          <h1>Vieta, kur naktį prasideda geriausi pokalbiai.</h1>
+          <p>
+            Registruokis, kurk temas ir dalinkis mintimis su visa bendruomene.
+          </p>
+
+          <div class="hero-actions">
+            <button id="createTopicButton" class="primary large">
+              Sukurti temą
+            </button>
+            <a href="#topics">Peržiūrėti temas →</a>
+          </div>
+        </div>
+
+        <aside class="featured">
+          <span class="live"><i></i> Gyva dabar</span>
+          <h2>Šios nakties tema</h2>
+          <p>
+            Koks buvo keisčiausias nuotykis, nutikęs tau po vidurnakčio?
+          </p>
+          <button class="gradient">Atidaryti diskusiją</button>
+        </aside>
+      </section>
+
+      <section class="content-layout">
+        <div>
+          <div id="categories" class="section-title">
+            <span>FORUMAS</span>
+            <h2>Kategorijos</h2>
+          </div>
+
+          <div class="categories">
+            <article>
+              <b>📢</b>
+              <div>
+                <h3>Naujienos</h3>
+                <p>Administracijos pranešimai ir atnaujinimai.</p>
+              </div>
+            </article>
+
+            <article>
+              <b>💬</b>
+              <div>
+                <h3>Bendravimas</h3>
+                <p>Laisvos diskusijos ir pažintys.</p>
+              </div>
+            </article>
+
+            <article>
+              <b>🎮</b>
+              <div>
+                <h3>Žaidimai</h3>
+                <p>Roblox, Minecraft, CS2 ir kiti žaidimai.</p>
+              </div>
+            </article>
+
+            <article>
+              <b>🎉</b>
+              <div>
+                <h3>Renginiai</h3>
+                <p>Konkursai, vakarai ir prizai.</p>
+              </div>
+            </article>
+          </div>
+
+          <div id="topics" class="section-title topics-title">
+            <span>NAUJAUSIA</span>
+            <h2>Forumo temos</h2>
+          </div>
+
+          <div id="topicList" class="topic-list"></div>
+        </div>
+
+        <aside class="sidebar">
+          <section class="side-card">
+            <h3>Prisijungę nariai</h3>
+
+            <div class="members">
+              <span>DV</span>
+              <div>
+                <b>Dovydas</b>
+                <small>Administratorius</small>
+              </div>
+              <i></i>
+
+              <span>EM</span>
+              <div>
+                <b>Emilija</b>
+                <small>Moderatorė</small>
+              </div>
+              <i></i>
+
+              <span>RK</span>
+              <div>
+                <b>Rokas</b>
+                <small>Narys</small>
+              </div>
+              <i></i>
+            </div>
+          </section>
+
+          <section class="side-card rules">
+            <span>☾</span>
+            <h3>Nakties taisyklės</h3>
+            <p>
+              Gerbk kitus, neskelbk reklamos be leidimo ir palaikyk draugišką atmosferą.
+            </p>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div id="loginModal" class="modal hidden">
+    <div class="backdrop" data-close></div>
+
+    <form id="loginForm" class="modal-card">
+      <button type="button" class="close" data-close>×</button>
+      <h2>Prisijungti</h2>
+
+      <label>
+        Vartotojo vardas
+        <input name="username" required>
+      </label>
+
+      <label>
+        Slaptažodis
+        <input name="password" type="password" required>
+      </label>
+
+      <p class="message"></p>
+      <button class="primary full">Prisijungti</button>
+    </form>
+  </div>
+
+  <div id="registerModal" class="modal hidden">
+    <div class="backdrop" data-close></div>
+
+    <form id="registerForm" class="modal-card">
+      <button type="button" class="close" data-close>×</button>
+      <h2>Registracija</h2>
+
+      <label>
+        Vartotojo vardas
+        <input name="username" minlength="3" maxlength="24" required>
+      </label>
+
+      <label>
+        Slaptažodis
+        <input name="password" type="password" minlength="6" required>
+      </label>
+
+      <p class="message"></p>
+      <button class="primary full">Sukurti paskyrą</button>
+    </form>
+  </div>
+
+  <div id="topicModal" class="modal hidden">
+    <div class="backdrop" data-close></div>
+
+    <form id="topicForm" class="modal-card">
+      <button type="button" class="close" data-close>×</button>
+      <h2>Nauja tema</h2>
+
+      <label>
+        Pavadinimas
+        <input name="title" maxlength="90" required>
+      </label>
+
+      <label>
+        Kategorija
+        <select name="category" required>
+          <option>Naujienos</option>
+          <option>Bendravimas</option>
+          <option>Žaidimai</option>
+          <option>Renginiai</option>
+        </select>
+      </label>
+
+      <label>
+        Turinys
+        <textarea name="content" rows="6" required></textarea>
+      </label>
+
+      <p class="message"></p>
+      <button class="primary full">Paskelbti</button>
+    </form>
+  </div>
+
+  <div id="logoModal" class="modal hidden">
+    <div class="backdrop" data-close></div>
+
+    <form id="logoForm" class="modal-card">
+      <button type="button" class="close" data-close>×</button>
+      <h2>Įkelti GIF logotipą</h2>
+      <p class="hint">Leidžiamas tik .gif failas, daugiausia 8 MB.</p>
+
+      <label>
+        GIF failas
+        <input name="logo" type="file" accept="image/gif,.gif" required>
+      </label>
+
+      <p class="message"></p>
+      <button class="primary full">Įkelti logotipą</button>
+    </form>
+  </div>
+
+  <div id="topicViewModal" class="modal hidden">
+    <div class="backdrop" data-close></div>
+
+    <div class="modal-card topic-view">
+      <button type="button" class="close" data-close>×</button>
+
+      <div id="topicViewContent"></div>
+
+      <form id="commentForm" class="comment-form">
+        <textarea
+          name="content"
+          rows="3"
+          placeholder="Parašyk komentarą..."
+          required
+        ></textarea>
+
+        <p class="message"></p>
+        <button class="primary">Komentuoti</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

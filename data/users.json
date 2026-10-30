@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1785700783439,
+    "username": "admin",
+    "passwordHash": "$2a$10$c9pyKi3JMrxvdEWbMxmCk.PYcRcZ0FWDQxeXwoEz2Z/HQ4ecbcxMa",
+    "role": "admin",
+    "createdAt": "2026-08-02T19:59:43.519Z"
+  },
+  {
+    "id": 1785700838185,
+    "username": "KAV3NSKAS",
+    "passwordHash": "$2a$10$3r/OKTx7DRXw1QIpBpYBJOdPc83RwFynHv31fBgnJ.iirJLP8J4/e",
+    "role": "admin",
+    "createdAt": "2026-08-02T20:00:38.250Z"
+  }
+]
